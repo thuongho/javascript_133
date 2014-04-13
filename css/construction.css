@@ -1,0 +1,45 @@
+/**********
+Style Sheet for pages under construction
+Created by: Thuong Ho
+Email: tho36@mail.ccsf.edu
+**********/
+body
+{
+	width: 700px;
+	margin: 10px;
+	background-color: #6699FF;
+}
+/* HEADER */
+header 
+{
+	width: 700px;
+	height: 125px;
+	margin-bottom: 10px;
+	clear: both;
+	float: left;
+	background-image: url('../images/under_construction.png');
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position:center; 
+	box-shadow: 0px 0px 5px #000000;
+	border-radius: 10px;
+}
+a 
+{ 
+	text-decoration: none;
+	color: white;
+}
+a:hover { background: #3399CC;}
+nav li
+ {
+	 display: inline;
+	 list-style-type: none;
+	 padding-right: 20px;
+	 font-family: Arial;
+	 font-size: 10pt;
+ }
+footer
+{
+	margin-left: 100px;
+	margin-right: auto;
+}

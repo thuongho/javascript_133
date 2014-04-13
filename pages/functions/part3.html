@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 3</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript3.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+</head>
+<body>
+<div class="content">
+	<h3>Student Grades</h3>
+	
+	<form name="credit">
+		<table>
+			<tr>
+				<td>Account Number:</td>
+				<td><input type="text" id="n1" size="15"></td>
+			</tr>
+			<tr>
+				<td>Beginning Balance:</td>
+				<td><input type="text" id="n2" size="15"></td>
+			</tr>
+			<tr>
+				<td>Total Charged:</td>
+				<td><input type="text" id="n3" size="15"></td>
+			</tr>
+			<tr>
+				<td>Total Credited to Card:</td>
+				<td><input type="text" id="n4" size="15"></td>
+			</tr>
+			<tr>
+				<td>Credit Limit:</td>
+				<td><input type="text" id="n5" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="creditMe()" value="SUBMIT">
+					<input type="reset" value="RESET">
+				</td>
+			</tr>
+		</table>
+
+		<h4>Results</h4>
+		<textarea rows="8" cols="40" id="statement">
+		</textarea>
+	</form>
+
+	<br>
+	<button id="change">Change Display</button>
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

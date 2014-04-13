@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 3</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript4.js"></script>
+	<style type="text/css">
+  body,td {
+    font-size: 10pt;
+    text-align: center;
+  }
+  table {
+  	margin:0px auto;
+    background-color: black;
+    border: 1px black solid;
+    border-collapse: collapse;
+  }
+  th {
+    border: 1px outset silver;
+    background-color: #404650;
+    color: white;
+    border-radius: 0px;
+    padding: 5px;
+  }
+  tr {
+    background-color: white;
+    margin: 1px;
+  }
+  tr.striped {
+    background-color: #CCCCCC;
+  }
+  td {
+    padding: 5px 10px;
+    text-align: right;
+  }
+  #principle{ font-size: 8pt;}
+	</style>
+</head>
+<body>
+	<div class="content">
+	<h3>Finance Tables</h3>
+	<p id="principle"><em>* Calculated base on principle of $1000.</em></p>
+	
+	<!-- Create the Finance Table -->
+	<script type="text/javascript">
+
+		// function for calculating interest
+		var calcInterestPayOut = function(p,r,y) {
+		  return (p * (Math.pow(1 + r, y)));
+		};	
+
+		var amount = 1000;
+
+		// create a function for creating the table
+		var createFinanceTable = function(interest) {
+
+			// creates the table with headers
+		  document.write("<table border='1'><tr><th>Year</th><th>Amount on Deposit</th>");
+		  document.write("<th>Interest Rate</th></tr>");
+		  
+		  // this loop will calculate the payout for each year
+		  for (var i = 1; i <= 10; i++) {
+
+				var payOut = calcInterestPayOut(amount,interest,i);
+
+		  	document.write("<tr><td>" + i + "</td>");
+		  	document.write("<td>" + payOut.toFixed(2) + "</td>");
+		  	document.write("<td>" + interest.toFixed(2) + "</td></tr>");
+		  }
+
+		  document.write("</table><br><br>");
+		};
+		  
+		// comments for ACR, trying to set fixed decimal places makes this compound exponentially  
+		// create a loop for creating the tables 
+		// for (var i=0.05; i <= 0.1; i = i + 0.01) {
+		// 	var amount = 1000;
+		// 	createFinanceTable(amount.toFixed(2),i.toFixed(2));
+		// }
+		createFinanceTable(0.05);
+		createFinanceTable(0.06);
+		createFinanceTable(0.07);
+		createFinanceTable(0.08);
+		createFinanceTable(0.09);
+		createFinanceTable(0.10);
+	</script>
+	<script type="text/javascript">
+	$(function(){
+		$("table tr:nth-child(even)").addClass("striped");
+	});
+	</script>
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 2</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript3.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="http://fog.ccsf.edu/~srubin/validate.js">
+	</script>
+
+	<script>
+	// testing out Prof Ruben's jQuey validation script
+	// $(document).ready(function()){
+	// 	$('#sale').validate(){
+	// 		rules:
+	// 		{
+	// 			num1a: { required: true, number: true}
+	// 		}
+	// 	};
+	// };
+	</script>
+</head>
+<body>
+<div class="content">
+	<h3>Weekly Earnings Calculator</h3>
+	<p><em>Enter the total quantity for each item in the textbox below <strong>Quatity</strong>. Then hit <strong>SUBMIT</strong> to calculate this week's earnings.</em></p>
+<form name="sale" id="sale">
+	<table>
+		<tr>
+			<th>Item</th>
+			<th>Value</th>
+			<th>Quantity</th>
+			<th>Total</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>239.99</td>
+			<td><input type="text" id="num1a" size="10"></td>
+			<td><input type="text" id="num1b" size="10" readonly=""></td>
+			<td><p id="num1c"></p></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>129.75</td>
+			<td><input type="text" id="num2a" size="10"></td>
+			<td><input type="text" id="num2b" size="10" readonly=""></td>
+			<td><p id="num2c"></p></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>99.95</td>
+			<td><input type="text" id="num3a" size="10"></td>
+			<td><input type="text" id="num3b" size="10" readonly=""></td>
+			<td><p id="num3c"></p></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>350.89</td>
+			<td><input type="text" id="num4a" size="10"></td>
+			<td><input type="text" id="num4b" size="10" readonly=""></td>
+			<td><p id="num4c"></p></td>
+		</tr>
+		<tr>
+			<td colspan="2"><em>Total from Sales</em></td>
+			<td></td>
+			<td><input type="text" id="num5b" size="10" readonly=""></td>
+		</tr>
+		<tr>
+			<td colspan="2"><em>Total Earned</em></td>
+			<td></td>
+			<td><input type="text" id="num6b" size="10" readonly=""></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2" style="text-align:right;">
+				<input type="button" onclick="totalIt()" value="SUBMIT">
+				<input type="reset" value="RESET">
+			</td>
+		</tr>
+	</table>
+</form>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

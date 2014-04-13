@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 1a</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/myjavascript5.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<style>
+		.content 
+		{
+			background: #E1E1FF;
+			opacity: .8;
+			margin: auto;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-radius: 5px;
+		}
+		.color td 
+		{
+			text-shadow: 1px 1px 0px black;
+		}
+		.buttons 
+		{
+			text-align: center;
+		}
+		#name
+		{
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+
+	<h4>Please fill out the survey.</h4>
+<form method="post" action="mailto:tho36@mail.ccsf.edu" name="survey" id="survey" enctype="text/plain" onreset="return confirm('Are you sure you want to clear form and start over?')">
+
+	<!-- Textbox -->
+	<h4>Name: </h4>
+	<input type="text" size="45" maxlength="50" name="name" id="name">
+	<br>
+	
+	<!-- Radio Buttons -->
+	<h5>What is your favorite color? (Pick one)</h5>
+	<table class="color">
+		<tr>
+			<td style="color:pink;"><input type="radio" name="color" value="pink">pink</td>
+			<td style="color:red;"><input type="radio" name="color" value="red">red</td>
+			<td style="color:orange;"><input type="radio" name="color" value="orange">orange</td>
+		</tr>
+		<tr>
+			<td style="color:yellow;"><input type="radio" name="color" value="yellow">yellow</td>
+			<td style="color:#009900;"><input type="radio" name="color" value="green">green</td>
+			<td style="color:blue;"><input type="radio" name="color" value="blue">blue</td>
+		</tr>
+		<tr>
+			<td style="color:purple;"><input type="radio" name="color" value="purple">purple</td>
+			<td style="color:#663300;"><input type="radio" name="color" value="brown">brown</td>
+			<td style="text-shadow:none;"><input type="radio" name="color" value="None">None of these</td>
+		</tr>
+		<tr>
+			<td style="color:white; text-shadow: 2px 1px 0px black;"><input type="radio" name="color" value="white">white</td>
+			<td style="text-shadow:none;"><input type="radio" name="color" value="black">black</td>
+			<td></td>
+		</tr>
+	</table>
+
+	<!-- Checkbox -->
+	<h5>Out of these interests, which do you like? (Choose all that applies)</h5>
+	<table id="likes">
+		<tr>
+			<td><input type="checkbox" name="likes" value="sports">sports</td>
+			<td><input type="checkbox" name="likes" value="science">science</td>
+			<td><input type="checkbox" name="likes" value="economy">economy</td>
+			<td><input type="checkbox" name="likes" value="food">food</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" name="likes" value="animals">animals</td>
+			<td><input type="checkbox" name="likes" value="adventure">adventure</td>
+			<td><input type="checkbox" name="likes" value="technology">technology</td>
+			<td><input type="checkbox" name="likes" value="fantasy">fantasy</td>
+		</tr>
+	</table>
+
+	<!-- Select Items -->
+	<h5>How often do you exercise per week:</h5>
+	<select name="exercises">
+		<option value=" ">Select exercise frequency.</option>
+		<option value="You don't exercise.">I don't exercise because it is tiring.</option>
+		<option value="You exercise 1-2 times.">1-2</option>
+		<option value="You exercise 3-4 times.">3-4</option>
+		<option value="You love going to the gym.">I live at the gym.</option>
+	</select>
+	<br>
+	<br>
+	<br>
+	<div class="buttons">
+	<input type="button" onclick="return validate(this.form)" value="SUBMIT">
+	<input type="reset" value="RESET">
+	</div>
+</form>
+
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

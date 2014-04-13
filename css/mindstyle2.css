@@ -1,0 +1,63 @@
+/**********
+Style Sheet for CNIT 132
+Created by: Thuong Ho
+Email: tho36@mail.ccsf.edu
+**********/
+body
+{
+	width: 700px;
+	margin: 10px;
+	background-color: #404650;
+}
+h1 
+{
+	text-align: center;
+	color: white;
+	text-shadow: 2px 2px 1px black,
+	3px 3px 1px white;
+}
+a 
+{ 
+	text-decoration: none;
+	color: white;
+}
+a:hover { background: #3399CC;}
+nav { text-align: center;}
+nav li
+{
+	display: inline;
+	list-style-type: none;
+	padding-right: 20px;
+	font-family: Arial;
+	font-size: 10pt;
+}
+.content
+{
+	background: #FFFFFF;
+	margin: 0px auto;
+	width: 600px;
+	padding: 20px;
+	border-radius: 10px;
+	font-family: Verdana, Sans-serif;
+}
+input {text-align: right;}
+
+li { list-style-type: none;}
+th 
+{
+	height: 50px;
+    width: 100px;
+    background-color: #4ECDC4;
+	border: 1px solid black;
+    border-radius: 5px;
+}
+td
+{
+	padding: 5px;
+}
+footer
+{
+	text-align: center;
+	color: white;
+	margin-top: 20px;
+}

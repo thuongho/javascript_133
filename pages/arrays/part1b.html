@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 1b</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/myjavascript5.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<style>
+		.content 
+		{
+			background: #E1E1FF;
+			opacity: .8;
+			margin: auto;
+			padding-left: 30px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-radius: 5px;
+		}
+		.color td 
+		{
+			text-shadow: 1px 1px 0px black;
+		}
+		.buttons 
+		{
+			text-align: center;
+		}
+		#name
+		{
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+
+	<form>
+	<h3>Favorite Artists</h3>
+	<p>Check out some of my favorite djs. You can navigate to their web page and learn more about them via the dropdown lists below.</p>
+
+	<p>This dropdown redirects you as you choose from the list.</p>
+
+	<select name="newPage" onChange="changePage(this.form);">
+	<option>Choose Artist:</option>
+	<option value="http://www.aboveandbeyond.nu">Above&amp;Beyond</option>
+	<option value="http://dashberlinworld.com">Dash Berlin</option>
+	<option value="http://tritonalmusic.com">Tritonal</option>
+	<option value="http://www.ronskispeed.com">Ronski Speed</option>
+	</select>
+	</form>
+
+	<form>
+	<p>Navigate using a button.</p>
+	<select name="newPage">
+	<option>Choose Artist:</option>
+	<option value="http://www.aboveandbeyond.nu">Above&amp;Beyond</option>
+	<option value="http://dashberlinworld.com">Dash Berlin</option>
+	<option value="http://tritonalmusic.com">Tritonal</option>
+	<option value="http://www.ronskispeed.com">Ronski Speed</option>
+	</select>
+	<input type="button" value="Go" onClick="changePage(this.form);">
+	</form>
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

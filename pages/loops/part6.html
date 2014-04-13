@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 6</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript4.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<link href='http://fonts.googleapis.com/css?family=Frijole' rel='stylesheet' type='text/css'>	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("button").click(function() {
+			$(".pix").animate({left: '450px'});
+		});
+	});
+	</script>
+	<style>
+		body 
+		{
+			background: #ccccff;
+			width: 600px;
+			position: absolute;
+			left: 20px;
+		}
+		h1 
+		{
+			font-family: 'Frijole', cursive;
+			color: #00CCFF;
+			font-size: 18pt;
+			text-shadow: 1px 1px 1px black,
+			5px 5px 1px white;
+		}
+		#green {color: green;}
+		.pix 
+		{
+			position: relative;
+			width: 90px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+<h1>Twelve Days of Christmas Song</h1>
+<div class="pix">
+	<!-- picture taken from clipartist.net -->
+	<figure>
+		  <img src="../../images/santa_reindeer.png" alt="santa on sled with reindeers" width="90" height="30">
+		</figure>
+		
+</div>
+
+<div class="content">
+
+	<h4 id="green">Don't let this song get stuck in your head. This script uses two "switches" and two "for" loops to write out the verses of the song.</h4><button>See Santa fly!</button>
+<script>
+
+// keep track of the days and the items verse
+var arrayDay = [],
+	arrayGaveToMe = [];
+
+// loop to write out the verses
+for (var i = 1; i <= 12; i++) {
+	
+	// create a variable for day and item received
+	var day = "",
+		gaveToMe = "";
+
+	// determines the day
+	switch(i) {
+		case 1 :
+			day = "first";
+			break;
+		case 2 :
+			day = "second";
+			break;
+		case 3 :
+			day = "third";
+			break;
+		case 4 :
+			day = "fourth";
+			break;
+		case 5 :
+			day = "fifth";
+			break;
+		case 6 :
+			day = "sixth";
+			break;
+		case 7 :
+			day = "seventh";
+			break;
+		case 8 :
+			day = "eigth";
+			break;
+		case 9 :
+			day = "ninth";
+			break;
+		case 10 :
+			day = "tenth";
+			break;
+		case 11 : 
+			day = "eleventh";
+			break;
+		case 12 :
+			day = "twelfth";
+			break;
+	}
+
+	arrayDay.push(day);
+	// first line
+	document.write("<p>On the " + day + " day of Christmas<br>");
+	document.write("my true love sent to me:<br>");
+
+	// verse of the item on the day
+	switch(i) {
+		case 1 :
+			gaveToMe = "A partridge in a pear tree.";
+			break;
+		case 2 :
+			gaveToMe = "Two turtle doves,";
+			break;
+		case 3 :
+			gaveToMe = "Three French Hens,";
+			break;
+		case 4 :
+			gaveToMe = "Four calling birds,";
+			break;
+		case 5 :
+			gaveToMe = "Five golden rings,";
+			break;
+		case 6 :
+			gaveToMe = "Six geese a laying,";
+			break;
+		case 7 :
+			gaveToMe = "Seven swans a swimming,";
+			break;
+		case 8 :
+			gaveToMe = "Eight maids a milking,";
+			break;
+		case 9 :
+			gaveToMe = "Nine ladies dancing,";
+			break;
+		case 10 :
+			gaveToMe = "Ten lords a leaping,";
+			break;
+		case 11 : 
+			gaveToMe = "Eleven pipers piping,";
+			break;
+		case 12 :
+			gaveToMe = "Twelve drummers drumming,";
+			break;
+	}
+
+	// add the verses to an array
+	arrayGaveToMe.push(gaveToMe);
+
+	// if it is the first verse, then use "A partridge in a pear tree."
+	if (i === 1){
+		document.write(gaveToMe + "<br>");
+
+	} else {
+		// change the last verse to "And a Partridge in a pear tree."
+		arrayGaveToMe[0] = "And a Partridge in a pear tree.";
+		for (var d = (i-1); d >= 0; d--) {
+			
+			var oldVerse = arrayGaveToMe[d];
+			document.write(oldVerse + "<br>");
+		}
+	}
+}
+
+</script>	
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

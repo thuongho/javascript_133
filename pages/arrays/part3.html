@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 3</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+</head>
+<body>
+<div class="content">
+	<h3>Tally Gross Wages</h3>
+	<p><em>Enter the <strong>gross sales</strong> amount for each employee. Then hit <strong>Keep Track</strong> to add it to the income bracket.</em></p>
+<form name="sale" id="sale">
+	<p>Enter gross sales: <input type="text" name="gross" id="gross" size="15"></p>
+	<textarea name="grossCounter" id="grossCounter" cols="35" rows="10"></textarea>
+	<br>
+
+	<input type="button" onclick="totalIt()" value="Keep Track">
+	<input type="reset" value="Reset">
+</form>
+
+	<script type="text/javascript">
+	var counterBracket = new Array(9);
+	for(i=0, l = counterBracket.length; i <l; i++){
+		counterBracket[i] = 0;
+	}
+
+	// create a counter array
+	var incomeBracket = ['$200-299','$300-399','$400-499','$500-599','$600-699','$700-799','$800-899','$900-999','$1000 and over'];
+
+	var totalIt = function(){
+
+		// get gross sales & textarea
+		var gross = document.getElementById('gross').value,
+			grossCounterArea = document.sale.grossCounter.value;
+
+		//convert gross sales to integer
+		var grossSales = parseFloat(gross);
+
+		// test for valid input
+		if(grossSales == "" || isNaN(grossSales)){
+			alert("Please enter a valid gross wage.");
+		}
+
+		// calc total
+		var total = Math.floor(((grossSales * 0.09) + 200) / 100 );
+
+		// total - 2
+		if (total - 2 < 8) {
+			counterBracket[total-2]++;
+		} else {
+			counterBracket[8]++; 
+		}
+
+		var msgArray = [];
+		// for loop to output counter to the textarea
+		for(i=0, l = incomeBracket.length; i < l; i++){
+			
+			// alert(incomeBracket[i] + " " + counterBracket[i]);
+			 msgArray.push(incomeBracket[i] + ": " + counterBracket[i]);
+		}
+		// print into text area
+		document.sale.grossCounter.value = msgArray.join("\n");
+		// clear input textbox
+		document.sale.gross.value = "";
+	};
+</script>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

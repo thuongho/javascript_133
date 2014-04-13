@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 4</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript3.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+</head>
+<body>
+<div class="content">
+	<h3>Palindrome Checker</h3>
+	<button id="opener">Show Instructions</button>
+	<div id="dialog">
+		<p>Input a five-digit integer (not starting with zero) to display if it is a palindome, not a palindrome, or an input error.</p>
+	</div>
+	<form name="pali">
+		<table>
+			<tr>
+				<td>Enter 5 digits:</td>
+				<td><input type="text" id="p1" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="paliMe()" value="SUBMIT">
+					<input type="reset" value="RESET">
+				</td>
+			</tr>
+		</table>
+
+		<h4>Results</h4>
+		<textarea rows="2" cols="40" id="display">
+		</textarea>
+	</form>
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

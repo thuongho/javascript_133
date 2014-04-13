@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 2</title>
+	<meta charset="UTF-8">
+  <link rel="stylesheet" href="../../js/jquery-ui-1.10.4/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script src="../../js/jquery-ui-1.10.4/ui/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<!-- ACR took awhile to figure that I had to download the jQuery UI package inorder for it to work -->
+	 <script>
+	 // jQuery UI script for view/hide instructions
+		$(function() {
+			$("#btn").button({
+				text: true, 
+				icons: {primary:'ui-icon-person'}
+			}).click(function() {
+				$('.instruction').slideToggle("slow");
+			});
+		});
+	</script>
+	<style type="text/css">
+	.flip 
+	{
+		background: #CCCCCC;
+		border:1px solid gray;
+		border-radius: 5px;
+		padding-left: 10px;
+	}
+	.instruction
+	{
+		display: none;
+	}
+
+	input, .tableTitles td
+	{
+		text-align: left;
+	}
+
+	</style>
+</head>
+<body>
+<div class="content">
+	<h3>State Information</h3>
+
+	<button id="btn">View/Hide Instructions</button>
+	<div class="instruction">
+		<p>Enter a state abbreviation or name (lower or upper case is ok).</p>
+
+	</div>
+<form name="displayState">
+	<p>Enter State:&nbsp; <input type="text" id="stateInput" size="15">&nbsp;&nbsp;&nbsp;
+	<input type="button" onclick="getInfo()" value="State Info">
+	<input type="reset" value="Reset"></p>
+	<table>
+		<tr class="tableTitles">
+			<td>State Abbr</td>
+			<td>State Name</td>
+			<td>Capital</td>
+			<td>Population</td>
+		</tr>
+		<tr>
+			<td><input type="text" id="num0" size="15" readonly disabled></td>
+			<td><input type="text" id="num1" size="15" readonly disabled></td>
+			<td><input type="text" id="num2" size="15" readonly disabled></td>
+			<td><input type="text" id="num3" size="15" style="text-align: right;"readonly disabled></td>
+		</tr>
+	</table>
+	<br>
+	<script>
+	var getInfo = function(){
+		// get the state from the user
+		var state = document.getElementById('stateInput').value.toLowerCase();
+
+		// array that holds the states abbr
+		var stateArray = [['AL', 'Alabama', 'Montgomery', '4,369,862'],
+											['AK', 'Alaska', 'Juneau', '619,500'],
+											['AZ', 'Arizona', 'Phoenix', '4,778,332'], 
+											['AR', 'Arkansas', 'Little Rock', '2,551,373'], 
+											['CA', 'California', 'Sacramento', '3,145,121'], 
+											['CO', 'Colorado', 'Denver', '4,056,133']];
+
+		var testArray = [],
+		l = stateArray.length;
+
+		// print State Info function
+		var printState = function(array){
+			if (array.length != 1){
+				alert(state + " is not in our records.");
+			}
+		};
+
+		// print info
+		var printStateInfo = function(i){
+			for(n=0; n < 5; n++){
+				stateBox = document.getElementById('num'+n);
+				// alert('num'+n);
+				stateBox.value = stateArray[i][n];
+			}
+		};
+
+		// check abbrev function
+		var checkAbbrev = function(state) {
+			for (i=0; i < l; i++){
+				var stateAbbrev = stateArray[i][0].toLowerCase();
+				// if it matches, stop the search
+				if (state == stateAbbrev){
+					testArray.push(state);
+					printStateInfo(i);
+					break;
+				}
+			}
+			printState(testArray);
+		};
+
+		// check fullName function
+		var checkFullName = function(state) {
+			for (i=0; i < l; i++){
+				var stateFullName = stateArray[i][1].toLowerCase();
+				if (state == stateFullName){
+					testArray.push(state);
+					printStateInfo(i);
+				}
+			}
+			printState(testArray);
+		};
+
+		// run check on the user's input
+		if (state.length == 0){
+			alert("please enter a valid State.");
+		} else if	(state.length == 2) {
+			checkAbbrev(state);
+		} else {
+			checkFullName(state);
+		}
+
+
+	};
+	</script>
+<br><br>
+</form>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

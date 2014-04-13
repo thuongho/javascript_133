@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 1</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript4.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+</head>
+<body>
+<h1>Calculating Sum and Product using Loops</h1>
+<div class="content">
+	<h3>1a For Loop</h3>
+	<p>This script uses a "for" loop to calculate the product and sum of 5 to 20, incrementing by 3.</p>
+<script>
+	var allNum = [],
+		product = 1,
+		sum = 0;
+	for (var i=5; i <= 20; i+=3) {
+		allNum.push(i);
+		product = product * i;
+		sum = sum + i;
+	}
+
+	// prints out the product 
+	document.write("The result of ");
+	document.write(allNum.join(" * "));
+	document.write(" is ");
+	document.write(product);
+	document.write(".");
+
+	//prints out the sum
+	document.write("<br><br>The result of ");
+	document.write(allNum.join(" + "));
+	document.write(" is ");
+	document.write(sum);
+	document.write(".");
+</script>
+
+<br><br>
+<h3>1b While Loop</h3>
+	<p>This script uses a "while" loop to calculate the product and sum of 3 to 31, incrementing by 4.</p>
+
+<script>
+	var i = 3,
+		allNum = [],
+		product = 1,
+		sum = 0;
+	while (i <= 31) {
+		allNum.push(i);
+		product *= i;
+		sum += i;
+		i+=4;
+	}
+
+	// prints out the product 
+	document.write("The result of ");
+	document.write(allNum.join(" * "));
+	document.write(" is ");
+	document.write(product);
+	document.write(".");
+
+	//prints out the sum
+	document.write("<br><br>The result of ");
+	document.write(allNum.join(" + "));
+	document.write(" is ");
+	document.write(sum);
+	document.write(".");
+
+</script>	
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

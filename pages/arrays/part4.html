@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 4</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+</head>
+<body>
+<div class="content">
+	<h3>Number Counter</h3>
+	<p><em>Enter as many numbers as you want between 10 and 100. This counter will keep track of the total numbers entered and it will also output only the non-duplicate numbers for you.</em></p>
+<form name="numCounter" id="numCounter">
+	<p>Enter number: <input type="text" name="num" id="num" size="15"></p>
+	<textarea name="numArea" id="numArea" cols="35" rows="10"></textarea>
+	<br>
+
+	<input type="button" onclick="countIt()" value="Keep Track">
+	<input type="reset" value="Reset">
+</form>
+
+	<script type="text/javascript">
+
+	// array to keep all the number
+	var numberArray = [];
+	// var nonDupNumArray = [];
+	// running counter
+	var runningCounter = 0;
+
+	var countIt = function(){
+
+		// get number input from textbox
+		var num = document.getElementById('num').value;
+
+		//convert the number to an integer
+		var number = parseInt(num);
+
+		// duplicate checker function
+		var checkDup = function(digit){
+			var dup = [];
+			for(i=0, l = numberArray.length; i < l; i++){
+				if (digit == numberArray[i]){
+					// if there is a duplicate number, flag it
+					dup.push(digit);
+					break;
+				}
+			}
+			if (dup.length != 1){
+				// if the number isn't a duplicate, add it to the numberArray
+				numberArray.push(digit);
+			}
+			// increase one to the running counter
+			runningCounter++;
+		};
+
+		// test for valid input
+		if(number == "" || isNaN(number) || number < 10 || number > 100){
+			alert("Please enter a number between 10 and 100.");
+		} else {
+		checkDup(number);
+		}
+
+		// display the numbers and the counter in the text area
+		var msg = numberArray.sort().join(", ");
+		document.numCounter.numArea.value = "Total numbers entered: " + runningCounter
+																					+ "\nThe numbers are: " + msg;
+		// clear the input field
+		document.numCounter.num.value = "";
+	};
+</script>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

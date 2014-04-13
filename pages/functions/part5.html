@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 5</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript3.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+</head>
+<body>
+<div class="content">
+	<h3>Temperature Conversion</h3>
+	<form name="temp">
+		<table>
+			<tr>
+				<td>Temperature:</td>
+				<td><input type="text" id="t1" size="20"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" onclick="celsius()" value="Convert to Celsius">
+					<input type="button" onclick="fahrenheit()" value="Convert to Fahrenheit">
+					<input type="reset" value="RESET">
+				</td>
+			</tr>
+		</table>
+
+		<h4>Conversion</h4>
+		<textarea rows="2" cols="40" id="convert">
+		</textarea>
+	</form>
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

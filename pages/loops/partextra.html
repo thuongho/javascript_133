@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Extra Credit</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript4.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+	<!-- the following script is needed for jquery validation of input -->
+	<script type="text/javascript" src="http://fog.ccsf.edu/~srubin/validate.js"></script>
+
+	<script type="text/javascript">
+
+		// JQuery validation: displays error message if form is not 1-3
+		$(document).ready(function() {
+			$("#squares").validate({
+				// rules for each input item
+				rules:
+				{
+					listType: { required: true, number: true, min: 2, max: 10}
+				}
+			});
+		});
+
+		function squareMe() {
+
+			if ($("#squares").valid()) {
+
+				// get the user's input
+				var userInput = document.getElementById("squareNum").value,
+					divOutput = document.getElementById("displaySquare"),
+					message = "",
+					itemList = "";
+
+				for(var i = 1; i <= 3; i++) {
+					itemList = itemList + "<li>List item " + i.toString() + "</li>";
+				}
+
+				// determines the type of list to display
+				switch(userInput) {
+					case "1":
+						message = "<ul type='square'>" +  itemList + "</ul>";
+						break;
+					case "2":
+						message = "<ol>" + itemList + "</ol>";
+						break;
+					case "3":
+						message = "<ol type='A'>" + itemList + "</ol>"
+						break;
+				}
+
+				// output the message into the div
+				divOutput.innerHTML = message;
+			}
+		};
+
+	</script>
+
+	<style type="text/css">
+	.flip 
+	{
+		background: #CCCCCC;
+		border:1px solid gray;
+		border-radius: 5px;
+		padding-left: 10px;
+	}
+	.instruction
+	{
+		display: none;
+	}
+	li { list-style-type: inherit !important;}
+	.n 
+	{ 
+		color: red; 
+		font-style: italic;
+		font-size: 8pt;
+	}
+	#enter 
+	{
+		color: black;
+		font-size: 12pt;
+		font-style: normal;
+	}
+	#btn { text-align: center;}
+	#squareNum {margin-left: 50px;}
+	</style>
+</head>
+<body>
+<div class="content">
+	<h3>Choose List Type</h3>
+	<div class="flip">
+		<h5>View/Hide Instructions</h5>
+	</div>
+	<div class="instruction">
+		<p>Enter into the textbox 1, 2 or 3.</p>
+	</div>
+<form name="squares" id="squares">
+	<p class="n"><span id="enter">Enter Square Size (2-10):   </span>
+	<input type="text" name="squareNum" id="squareNum" /></p>
+	<div id="displaySquare"></div>
+	<p id="btn"><input type="button" onclick="squareMe()" value="SQUARE IT">
+	<input type="reset" value="RESET"></p>
+</form>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 1</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript3.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<style type="text/css">
+	.flip 
+	{
+		background: #CCCCCC;
+		border:1px solid gray;
+		border-radius: 5px;
+		padding-left: 10px;
+	}
+	.instruction
+	{
+		display: none;
+	}
+	#scale
+	{
+		border-collapse: separate;
+		border-spacing: 0px;
+	}
+	#scale td
+	{
+		border: 1px solid #CCCCCC;
+	}
+	</style>
+</head>
+<body>
+<div class="content">
+	<h3>Student Grades</h3>
+	<div class="flip">
+		<h5>View/Hide Instructions</h5>
+	</div>
+	<div class="instruction">
+		<p>To find out your final grade for the class, please enter the score for your 
+		homework average, mid-term exam, final exam, and ACR. Then hit the submit button
+		to find out.</p>
+		<table id="scale">
+		<tr>
+			<td>90-100</td>
+			<td>A</td>
+		</tr>
+		<tr>
+			<td>80-89</td>
+			<td>B</td>
+		</tr>
+		<tr>
+			<td>70-79</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>60-79</td>
+			<td>D</td>
+		</tr>
+		<tr>
+			<td>0-59</td>
+			<td>F</td>
+		</tr>
+		</table>
+	</div>
+<form name="math">
+	<table>
+		<tr>
+			<td>Homework Average:</td>
+			<td><input type="text" id="num1" size="10"></td>
+		</tr>
+		<tr>
+			<td>Midterm Exam Score:</td>
+			<td><input type="text" id="num2" size="10"></td>
+		</tr>
+		<tr>
+			<td>Final Exam Score:</td>
+			<td><input type="text" id="num3" size="10"></td>
+		</tr>
+		<tr>
+			<td>ACR:</td>
+			<td><input type="text" id="num4" size="10"></td>
+		</tr>
+		<tr>
+			<td>Final Grade:</td>
+			<td><input type="text" id="num5" size="10" readonly=""></td>
+		</tr>
+	</table>
+	<br>
+	<input type="button" onclick="gradeMe()" value="SUBMIT">
+	<input type="reset" value="RESET">
+</form>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

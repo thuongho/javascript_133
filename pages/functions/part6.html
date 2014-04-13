@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 6</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript3.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script>
+		// load the flashCard function with the window loading
+		// window.onload = flashCard;
+
+		// set the flash card answer as a global var to carry over in checkMe
+		var correctAnswer;
+
+		// generate random multiplication questions
+		function flashCard(){
+			var phrase, n1, n2, myAnswer;
+			phrase = document.getElementById("flash");
+			n1 = Math.floor((Math.random()*9)+1);
+			n2 = Math.floor((Math.random()*9)+1);
+			phrase.innerHTML = "How much is " + n1 + " times " + n2 + "?";
+			correctAnswer = n1 * n2;
+			// return myAnswer;
+		}
+		function checkMe(){
+			var answer, a1, phrase, playMore;
+			a1 = document.getElementById("answer").value;
+			answer = parseInt(a1);
+			phrase = document.getElementById("flash");
+
+			if (answer == correctAnswer) {
+				phrase.innerHTML = "Very good!";
+				playMore = confirm("Would you like to play again")
+				if (playMore){
+					flashCard();
+				}
+			}
+			else {
+				alert("No. Please try again.");
+			}
+			document.getElementById("answer").value = "";
+		}
+		
+	</script>
+</head>
+<body>
+<div class="content">
+	<h3>Multiplication Flash Card</h3>
+	<form name="multiplication">
+		<p id="flash">Ready to play the game? Press Go button to start.
+		<input type="button" onclick="flashCard()" value="GO"></p>
+	
+		<table>
+			<tr>
+				<td>Enter your answer:</td>
+				<td><input type="text" id="answer" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="checkMe()" value="SUBMIT">
+					<input type="reset" value="RESET">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

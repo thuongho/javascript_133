@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 2</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript4.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+</head>
+<body>
+<div class="content">
+	<h3>Weekly Earnings Calculator</h3>
+	<p><em>Enter the <strong>hours worked</strong> and <strong>hourly rate</strong> for each employee in the respective textboxes. Then hit <strong>SUBMIT</strong> to calculate this week's earnings.</em></p>
+<form name="sale" id="sale">
+	<table>
+		<tr>
+			<th>Employee</th>
+			<th>Hours Worked</th>
+			<th>Hourly Rate</th>
+			<th>Gross Pay</th>
+		</tr>
+		<tr>
+			<td>Employee</td>
+			<td><input type="text" id="hrWorked1" size="10"></td>
+			<td><input type="text" id="hrRate1" size="10"></td>
+			<td><input type="text" id="num1b" size="10" readonly=""></td>
+		</tr>
+		<tr>
+			<td>Employee</td>
+			<td><input type="text" id="hrWorked2" size="10"></td>
+			<td><input type="text" id="hrRate2" size="10"></td>
+			<td><input type="text" id="num2b" size="10" readonly=""></td>
+		</tr>
+		<tr>
+			<td>Employee</td>
+			<td><input type="text" id="hrWorked3" size="10"></td>
+			<td><input type="text" id="hrRate3" size="10"></td>
+			<td><input type="text" id="num3b" size="10" readonly=""></td>
+		</tr>
+		<tr>
+			<td>Employee</td>
+			<td><input type="text" id="hrWorked4" size="10"></td>
+			<td><input type="text" id="hrRate4" size="10"></td>
+			<td><input type="text" id="num4b" size="10" readonly=""></td>
+			<td><p id="num4c"></p></td>
+		</tr>
+		<tr>
+			<td>Employee</td>
+			<td><input type="text" id="hrWorked5" size="10"></td>
+			<td><input type="text" id="hrRate5" size="10"></td>
+			<td><input type="text" id="num5b" size="10" readonly=""></td>
+			<td><p id="num4c"></p></td>
+		</tr>
+		<tr>
+			<td>Employee</td>
+			<td><input type="text" id="hrWorked6" size="10"></td>
+			<td><input type="text" id="hrRate6" size="10"></td>
+			<td><input type="text" id="num6b" size="10" readonly=""></td>
+			<td><p id="num4c"></p></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2" style="text-align:right;">
+				<input type="button" onclick="totalIt()" value="SUBMIT">
+				<input type="reset" value="RESET">
+			</td>
+		</tr>
+	</table>
+</form>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>
