@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 2</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="../../js/myjavascript6.js"></script> 
+
+</head>
+<body>
+<div class="content">
+	<h3>Search Me</h3>
+	
+	<form name="searchme">
+		<table>
+			<tr>
+				<td>
+					<textarea rows="8" cols="40" id="message" name="message"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Search Character: <input type="text" id="n1" size="15"></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="button" onclick="searchMe()" value="Search">
+					<input type="reset" value="Reset">
+				</td>
+			</tr>
+		</table>
+
+		<h4>Results</h4>
+		<textarea rows="3" cols="50" id="searchResult" name="searchResult">
+		</textarea>
+	</form>
+
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

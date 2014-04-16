@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 3</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+	<style>
+		#clock 
+		{
+			font-size: 10pt;
+		}
+		#clock h4
+		{
+			margin-bottom: 0px;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+	<h3>Date, Time, and Phone</h3>
+
+	<div id="clock">
+	<script>
+
+		var clock = document.getElementById('clock');
+	  // var currentDate = Date.now();
+	  var currentDate = new Date();
+
+	  var timeDifference = parseInt(currentDate.getTimezoneOffset());
+
+	  var pstUTC = (timeDifference / 60),
+	  	estUTC = pstUTC - 3;
+
+	  var easternTime = currentDate.setHours(estUTC);
+
+	  document.write('<h4>toString format: </h4>' + currentDate.toString());
+	 	document.write('<br>');
+	  document.write('<h4>toLocaleString format: </h4>' + currentDate.toLocaleString());
+	  document.write('<br>');
+	  document.write('<h4>toUTCString format: </h4>');
+	  document.write(currentDate.toUTCString());
+	  document.write('<br>');
+	  // document.write(currentDate.getTimezoneOffset());
+	  document.write('<h4>The hours difference between PST and UTC is: </h4>');
+	  document.write(pstUTC + ' hrs');
+
+	  document.write('<h4>EST and UTC difference is: </h4>');
+	  document.write(estUTC + ' hrs');
+
+	  // document.write('<h4>EST is: </h4>');
+	  // document.write(easternTime.toString());
+	</script>
+	</div>
+	<br>
+	<form name="numbers">
+		<table>
+			<tr>
+				<td>Phone Number:</td>
+				<td><input type="text" id="n1" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="phoneMe()" value="SUBMIT">
+					<input type="reset" value="RESET">
+				</td>
+			</tr>
+			<tr>
+				<td><input type="text" id="area" readonly disabled></td>
+				<td><input type="text" id="phoneNum" readonly disabled></td>
+			</tr>
+		</table>
+	</form>
+
+	<script>
+	var phoneMe = function(){
+		var phoneRegEx = /^\(?(\d{3}){0,1}\)?[- .]?(\d{3})[- .]?(\d{4})$/;
+
+		// grab phone number from input box
+		var phone = document.getElementById('n1').value;
+
+		// splitting it up into sections
+		var sections = phone.match(phoneRegEx);
+
+		if (sections != null) {
+			// alert(sections[1] + sections[2] + sections[3]);
+		}
+		// splitting it on - or space
+		var parts = phone.split(/\ |-/);
+
+		document.getElementById('area').value = parts[0];
+		document.getElementById('phoneNum').value = parts[1] + parts[2];
+	};
+	</script>
+
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

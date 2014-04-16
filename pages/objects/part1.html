@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 1</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+</head>
+<body>
+<div class="content">
+	<h3>Enter a number to get the square root, nearest tenth, hundredth, and thousandth.</h3>
+	
+	<form name="numbers">
+		<table>
+			<tr>
+				<td>Number:</td>
+				<td><input type="text" id="n1" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="floatMe()" value="SUBMIT">
+					<input type="reset" value="RESET">
+				</td>
+			</tr>
+		</table>
+
+		<h4>Results</h4>
+		<textarea rows="8" cols="50" id="floatResult" name="floatResult">
+		</textarea>
+	</form>
+
+	<script>
+	function floatMe(){
+		var n1 = document.getElementById('n1').value;
+
+		if (n1 == "" || n1 == null || isNaN(n1)){
+			alert("Please enter a number");
+		}
+		else {
+			number = parseFloat(n1);
+
+			// round to the nearest int
+			var rountNum = Math.round(number);
+
+			// calc sqrt
+			var sqNum = Math.sqrt(number);
+
+			// round nearest tenth
+			var tenNum = Math.floor(number*10)/10;
+
+			// round nearest hundredth
+			var hundNum = Math.floor(number*100)/100;
+
+			// round nearest thousandth
+			var thousNum = Math.floor(number*1000)/1000;
+
+			document.numbers.floatResult.value = ("The number you input is: " + number + "\nThe square root of that number: " + Math.round(sqNum) + "\nThe number rounded to the tenth: " + tenNum.toFixed(1) + "\nThe number rounded to the hundredth: " + hundNum.toFixed(2) + "\nThe number rounded to the thousandth: " + thousNum.toFixed(3));
+		}
+	}
+	</script>
+
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>
