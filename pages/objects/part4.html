@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 4</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="../../js/myjavascript6.js"></script> 
+
+	
+</head>
+<body>
+<div class="content">
+	<h3>Watch out for cookies site.</h3>
+	
+	<form name="rememberCookies">
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" id="n1" size="15" onfocus="checkUsername()"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" id="n2" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="rememberMe()" value="Log in">
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script>
+		var checkUsername = function(){
+			checkCookie();
+		};
+	</script>
+
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>
