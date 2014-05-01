@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 1</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+
+</head>
+<body>
+<div class="content">
+	<h3>Enter your name to find out your browser, platform, and screen property</h3>
+	
+	<form name="userProp">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" id="n1" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="sniffMe()" value="Submit">
+					<input type="reset" value="Reset">
+				</td>
+			</tr>
+		</table>
+
+		<h4>Results</h4>
+		<textarea rows="8" cols="50" id="sniffResult" name="sniffResult">
+		</textarea>
+	</form>
+
+	<script>
+		var sniffMe = function () {
+			// the user's name
+			var userName = document.getElementById('n1').value,
+				// browser name
+				bName = navigator.appName,
+				// browser version
+				vNumber = parseInt(navigator.appVersion),
+				// user's platform
+				pName = navigator.platform,
+				// screen width
+				sWidth = screen.width,
+				// screen height
+				sHeight = screen.height,
+				// combined property
+				cProp = navigator.userAgent;
+
+			document.userProp.sniffResult.value = ("Hi " + userName + "\nBrower: " + bName + " ver." + vNumber + "\nPlatform: " + pName + "\nScreen size is " + sWidth + "x" + sHeight + "\n---------------- \nSpecific properties: " + cProp);		
+		};
+	</script>
+
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

@@ -119,6 +119,7 @@ function checkCookie(){
 
   if (username != ""){
     alert("Welcome again " + username);
+    document.rememberCookies.n1.blur();
     uName.value = "rosebud";
     pWord.value = "komodo";
     
