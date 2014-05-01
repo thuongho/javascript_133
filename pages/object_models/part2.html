@@ -4,104 +4,165 @@
 	<title>Part 2</title>
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="../../js/myjavascript5.js"></script>
+	<script type="text/javascript" src="../../js/jquery.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
 	<style>
-/*		.content 
-		{
-			background: #E1E1FF;
-			opacity: .8;
-			margin: auto;
-			padding-left: 30px;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			border-radius: 5px;
-		}
-		.color td 
-		{
-			text-shadow: 1px 1px 0px black;
-		}
-		.buttons 
-		{
-			text-align: center;
-		}
-		#name
-		{
-			text-align: left;
-		}*/
+		.black { background: black; }
+		.red { background: red; }
+		.green { background: green; }
+		.normal { font-style: normal; }
+		.italic { font-style: italic; }
+		.oblique {font-style: oblique; }
+		.fontSize8 { font-size: 8pt; }
+		.fontSize10 { font-size: 10pt; }
+		.fontSize24 { font-size: 24pt; }
+		.serif { font-family: serif; }
+		.cursive { font-family: cursive; }
+		.fantasy { font-family: fantasy; }
+		.fW1 { font-weight: normal; }
+		.fW2 { font-weight: bold; }
+		.fW3 { font-weight: bolder; }
 	</style>
 </head>
-<body>
-<div class="content">
+<body class="bodyBackGround">
+<div id="container1" class="content">
+<div id="container2" class="content2">
+<div id="container3" class="content3">
+<div id="container4" class="content4">
 
-	<h4>Customize the page.</h4>
-<form method="post" action="" name="survey" id="survey" enctype="text/plain" onreset="return confirm('Are you sure you want to clear form and start over?')">
+	<h4 class="words">Customize the page.</h4>
+<form method="post" action="" name="custom" id="custom" enctype="text/plain" >
 
-	<!-- Textbox -->
-<!-- 	<h4>Name: </h4>
-	<input type="text" size="45" maxlength="50" name="name" id="name">
-	<br> -->
 	
 	<!-- Radio Buttons -->
-	<h5>Change the background color</h5>
-	<table class="color">
+	<h5 class="words">Change the background color</h5>
+	<table class="tColor">
 		<tr>
-			<td style="color:pink;"><input type="radio" name="color" value="pink">pink</td>
 			<td style="color:red;"><input type="radio" name="color" value="red">red</td>
-			<td style="color:orange;"><input type="radio" name="color" value="orange">orange</td>
 		</tr>
 		<tr>
-			<td style="color:yellow;"><input type="radio" name="color" value="yellow">yellow</td>
 			<td style="color:#009900;"><input type="radio" name="color" value="green">green</td>
-			<td style="color:blue;"><input type="radio" name="color" value="blue">blue</td>
 		</tr>
 		<tr>
-			<td style="color:purple;"><input type="radio" name="color" value="purple">purple</td>
-			<td style="color:#663300;"><input type="radio" name="color" value="brown">brown</td>
-			<td style="text-shadow:none;"><input type="radio" name="color" value="None">None of these</td>
-		</tr>
-		<tr>
-			<td style="color:white; text-shadow: 2px 1px 0px black;"><input type="radio" name="color" value="white">white</td>
-			<td style="text-shadow:none;"><input type="radio" name="color" value="black">black</td>
-			<td></td>
+			<td style="text-shadow:none;"><input type="radio" name="color" value="black" on>black</td>
 		</tr>
 	</table>
 
-	<!-- Checkbox -->
-<!-- 	<h5>Out of these interests, which do you like? (Choose all that applies)</h5>
-	<table id="likes">
-		<tr>
-			<td><input type="checkbox" name="likes" value="sports">sports</td>
-			<td><input type="checkbox" name="likes" value="science">science</td>
-			<td><input type="checkbox" name="likes" value="economy">economy</td>
-			<td><input type="checkbox" name="likes" value="food">food</td>
-		</tr>
-		<tr>
-			<td><input type="checkbox" name="likes" value="animals">animals</td>
-			<td><input type="checkbox" name="likes" value="adventure">adventure</td>
-			<td><input type="checkbox" name="likes" value="technology">technology</td>
-			<td><input type="checkbox" name="likes" value="fantasy">fantasy</td>
-		</tr>
-	</table> -->
+	<!-- script to change body class -->
+	<script>
 
+	var bColor = document.custom.color,
+		bodyBackG = document.getElementsByTagName('body')[0];
+
+		for (var i = 0, l = bColor.length; i < l; i++) {
+			bColor[i].onclick = function(){
+				bodyBackG.className = this.value;
+				// alert("value " + this.value + "\nbody class " + bodyBackG.className);
+			};
+		}
+
+	</script>
+	
+	<table>
 	<!-- Select Items -->
-	<h5>Font size:</h5>
-	<select name="exercises">
-		<option value=" ">Select font size.</option>
-		<option value="8">8</option>
-		<option value="10">10</option>
-		<option value="12">12</option>
-		<option value="14">14</option>
+	<!-- Font Size -->
+	<tr>
+	<td>
+	<h5 class="words">Font Size:</h5>
+	<select name="fontSize" id="fontSize">
+		<option value="fontSize8">8</option>
+		<option value="fontSize10">10</option>
+		<option value="fontSize24">24</option>
 	</select>
+	</td>
+
+
+
+	<!-- Font Family -->
+	<td>
+	<h5 class="words">Font Family:</h5>
+	<select name="fontFamily" id="fontFamily">
+		<option value="fontFamily8">serif</option>
+		<option value="fontFamily10">cursive</option>
+		<option value="fontFamily12">fantasy</option>
+	</select>
+	</td>
+
+	<td>
+	<!-- Font Style -->
+	<h5 class="words">Font Style:</h5>
+	<select name="fontStyle" id="fontStyle">
+		<option value="fStyle1">normal</option>
+		<option value="fStyle2">italic</option>
+		<option value="fStyle3">oblique</option>
+	</select>
+	</td>
+	<td>
+	<!-- Font Style -->
+	<h5 class="words">Font Weight:</h5>
+	<select name="fontWeight" id="fontWeight">
+		<option value="fW1">normal</option>
+		<option value="fW2">bold</option>
+		<option value="fW3">bolder</option>
+	</select>
+	</td>
+	</tr>
+	</table>
+
+		<script>
+	// font size array
+	var fSize = document.custom.fontSize,
+		// font family array
+		fFamily = document.custom.fontFamily,
+		// font style array
+		fStyle = document.custom.fontStyle,
+		// font weight array
+		fWeight = document.custom.fontWeight,
+		// get div container
+		content1 = document.getElementById('container1'),
+		content2 = document.getElementById('container2'),
+		content3 = document.getElementById('container3'),
+		content4 = document.getElementById('container4'),
+		
+		oldClassName = content1.className;
+
+		// font size select item change
+		$('#fontSize').change(function(){
+			var fSz = fSize.options[fSize.selectedIndex].value;
+			// alert(fSz);
+			content1.className = oldClassName + " " + fSz;
+			
+		});
+
+		// font family select item change
+		$('#fontFamily').change(function(){
+			var ff = fFamily.options[fFamily.selectedIndex].text;
+			// alert(ff);
+			content2.className = ff;
+		});
+
+		// font style select item change
+		$('#fontStyle').change(function(){
+			var fSl = fStyle.options[fStyle.selectedIndex].text;
+			// alert(fSl);
+			content4.className = fSl;
+		});
+
+		// font weight select item change
+		$('#fontWeight').change(function(){
+			var fw = fWeight.options[fWeight.selectedIndex].value;
+			// alert(fSl);
+			content3.className = fw;
+		});
+
+		// ACL this one took pretty long. Had to figure out how to change the class of the body and retain that class with the other attributes. So I created multiple div containers. Then use jQuery for the change function of selected items.
+	</script>
 	<br>
-	<br>
-	<br>
-	<div class="buttons">
-	<input type="button" onclick="return validate(this.form)" value="SUBMIT">
-	<input type="reset" value="RESET">
-	</div>
+
 </form>
-
-
+</div>
+</div>
+</div>
 </div>
 <footer>
 <form id="close">
