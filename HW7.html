@@ -3,6 +3,46 @@
 	<title>CNIT 133 Homework 7 - Object Model and Event Model</title>
 		<link rel="stylesheet" type="text/css" href="css/mindstyle2.css" />
 		<script type="text/javascript" src="js/myjavascript7.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+		<style>
+			.but
+			{ 
+				color: black;
+				height: 50px;
+		    width: 500px;
+		    background-color: #4ECDC4;
+				border: 1px solid black;
+		    border-radius: 5px;
+		    padding-left: 40px;
+
+			}
+			.but a 
+			{ 
+				font-size: 18pt; 
+				width: 400px;
+			}
+			.expand
+			{
+				cursor: pointer;
+				background: url('images/add.jpg') no-repeat;
+				background-size: contain;
+			}
+			.close
+			{
+				background: url('images/minus.jpg') no-repeat;
+				background-size: contain;
+			}
+			.expand h4
+			{
+				margin-left: 30px;
+				font-size: 18pt;
+				font-family: sans-serif;
+				color: #4ECDC4;
+				text-shadow: 2px 2px 0px white,
+					2px 2px 1px black;
+			}
+		</style>
 </head>
 <body>
 	<header>
@@ -21,9 +61,40 @@
 		  <li><a href="HW8.html" target="_self" id="hw8">HW8</a></li>
 	    </ul>
 	</nav>
+
+	<script>
+		$(document).ready(function() {
+		 $('.but').hide();
+		 $('.expand').toggle(
+				function() {
+			       $(this).next('.but').slideDown();
+				   $(this).addClass('close');
+				},
+				function() {
+				   $(this).next('.but').fadeOut();
+				   $(this).removeClass('close');
+			  }
+			); 
+		}); 
+
+	</script>
   	<div class="content">
 	  	<h3>Object Model and Event Model</h3>
-			<table>
+
+			<div class="expand"><h4>Sniffing the user.</h4></div>
+			<div class="but"><a href="javascript:new_window('pages/object_models/part1.html')">Part I</a></div>
+					
+			<div class="expand"><h4>Customizable via className.</h4></div>
+			<div class="but"><a href="javascript:new_window('pages/object_models/part2.html')">Part II</a></div>
+					
+			<div class="expand"><h4>Login and hot spots</h4></div>
+			<div class="but"><a href="javascript:new_window('pages/object_models/part3.html')">Part III</a></div>
+					
+			<div class="expand"><h4>Nav bar with links to old homeworks.</h4></div>
+			<div class="but"><a href="javascript:new_window('pages/object_models/part4.html')">Part IV</a></div>
+					
+
+<!-- 			<table>
 				<tr>
 					<th class="but"><a href="javascript:new_window('pages/object_models/part1.html')">Part I</a></th>
 					<td>Sniffing the user.</td>
@@ -34,13 +105,13 @@
 				</tr>
 				<tr>
 					<th class="but"><a href="javascript:new_window('pages/object_models/part3.html')">Part III</a></th>
-					<td>Time Difference and Phone Number.</td>
+					<td>Login and hot spots</td>
 				</tr>
 				<tr>
 					<th class="but"><a href="javascript:new_window('pages/object_models/part4.html')">Part IV</a></th>
-					<td>Using Cookies.</td>
+					<td>Nav bar with links to old homeworks.</td>
 				</tr>
-			</table>
+			</table> -->
   	</div>
 	<footer>
 		<script type="text/javascript">

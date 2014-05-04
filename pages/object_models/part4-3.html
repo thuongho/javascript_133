@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 4</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<link rel="stylesheet" href="../../js/jquery-ui-1.10.4/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="../../js/jquery-ui-1.10.4/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui-1.10.4/ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript7.js"></script>
+	
+		<!-- emmet script -->
+		<!-- (li>a[href='../part$.html']{part$})*4 -->
+	 <script>
+		// jQuery script for view/hide 
+		// $(document).ready(function(){
+		// 	$('.flip').mouseover(function(){
+		// 		$('.parts').slideToggle("slow");
+		// 	});
+		// });
+
+		// $(document).ready(function(){
+		//   $(".flip").mouseover(function(){
+		// 		$('.parts').slideDown(300);
+		  	
+		//     // $("p").css("background-color","yellow");
+		//   });
+		//   $(".flip").mouseout(function(){
+		//     // $("p").css("background-color","lightgray");
+		//     $('.parts').slideUp(300);
+		//   });
+		// });
+	</script>
+	<style>
+		ul > li > a { color: black;}
+		.content
+		{
+			height: 300px;
+		}
+
+		/* new nav bar */
+		.flip 
+		{
+			background: #CCCCCC;
+			border:1px solid gray;
+			border-radius: 5px;
+			padding-left: 10px;
+			width: 60px;
+			margin: 0px;
+			display: inline-block;
+		}
+		.parts
+		{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<h1>Links To Homework 1 - 6</h1>
+<div class="content">
+
+<div class="flip">HW1
+	<div class="parts"></div>
+</div>
+<div class="flip">HW2
+	<div class="parts">
+		<ul>
+		<li><a href="../part1.html">part1</a></li>
+		<li><a href="../part2.html">part2</a></li>
+		<li><a href="../part3.html">part3</a></li>
+		<li><a href="../part4.html">part4</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip">HW3
+	<div class="parts">
+		<ul>
+		<li><a href="../functions/part1.html">part1</a></li>
+		<li><a href="../functions/part2.html">part2</a></li>
+		<li><a href="../functions/part3.html">part3</a></li>
+		<li><a href="../functions/part4.html">part4</a></li>
+		<li><a href="../functions/part5.html">part5</a></li>
+		<li><a href="../functions/part6.html">part6</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip">HW4
+	<div class="parts">
+		<ul>
+		<li><a href="../loops/part1.html">part1</a></li>
+		<li><a href="../loops/part2.html">part2</a></li>
+		<li><a href="../loops/part3.html">part3</a></li>
+		<li><a href="../loops/part4.html">part4</a></li>
+		<li><a href="../loops/part5.html">part5</a></li>
+		<li><a href="../loops/part6.html">part6</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip">HW5
+	<div class="parts">
+		<ul>
+		<li><a href="../arrays/part1.html">part1</a></li>
+		<li><a href="../arrays/part1.html">part1</a></li>
+		<li><a href="../arrays/part2.html">part2</a></li>
+		<li><a href="../arrays/part3.html">part3</a></li>
+		<li><a href="../arrays/part4.html">part4</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip">HW6
+	<div class="parts">
+		<ul>
+			<li><a href="../objects/part1.html">part1</a></li>
+			<li><a href="../objects/part2.html">part2</a></li>
+			<li><a href="../objects/part3.html">part3</a></li>
+			<li><a href="../objects/part4.html">part4</a></li>
+		</ul>
+	</div>
+</div>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

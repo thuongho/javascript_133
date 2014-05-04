@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 3</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript7.js"></script>
+	
+
+	<script>
+		// hides and show the login
+		$(document).ready(function(){
+			$('.expand').toggle(function(){
+				$('#login').slideDown(500);
+				$(this).addClass('close');
+			},
+			function(){
+				$('#login').slideUp(500);
+				$(this).removeClass('close');
+			});
+		});
+	</script>
+	
+	<style>
+		#login 
+		{ 
+			background: #E1FFFE;
+			display: none;
+			border-radius: 5px;
+			box-shadow: 5px 5px 5px #888;
+			width: 350px;
+		}
+		.content { height: 300px; }
+		.expand
+		{
+			cursor: pointer;
+			background: url('../../images/add.jpg') no-repeat;
+			background-size: contain;
+		}
+		.close
+		{
+			background: url('../../images/minus.jpg') no-repeat;
+			background-size: contain;
+		}
+		.expand p
+		{
+			margin-left: 30px;
+			font-family: arial;
+			color: green;
+			text-shadow: 1px 1px 0px black;
+		}
+	</style>
+</head>
+<body>
+<h1>Password Protected Page</h1>
+<div class="content">
+	
+	<div class="expand">
+		<p>Login</p>
+	</div>
+	<form name="login" id="login">
+		<table>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" id="n2" size="15"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="button" onclick="redirectMe()" value="Log in">
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

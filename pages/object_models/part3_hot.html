@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hot Spots</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	
+
+	<style>
+		.hSpot 
+		{
+			margin: 0px auto;
+			width: 150px;
+			height: 150px;
+			border-radius: 10px;
+		}
+		#red, .red { background: red; }
+		#yellow, .yellow { background: yellow; }
+		#green, .green { background: green; } 
+		h3
+		{
+			margin: 0px auto;
+			text-align: center;
+			padding-top: 45px;
+		}
+
+	</style>
+</head>
+<body>
+<h1>Password Protected Page</h1>
+<div class="content">
+	
+	
+	<div id="red" class="hSpot">
+		<h3>Stop</h3>
+	</div>
+	<div id="yellow" class="hSpot">
+		<h3>Caution</h3>
+	</div>
+	<div id="green" class="hSpot">
+		<h3>Go</h3>
+	</div>
+
+	<script>
+	$(document).ready(function(){
+		// get background
+		var bodyBackG = document.getElementsByTagName('body')[0];
+		myId = "";
+
+		// mousever the hot spot to get the color
+		$('.hSpot').mouseover(function(){
+			myId = $(this).attr('id');
+			// add the color class
+			$(bodyBackG).addClass(myId);
+		});
+		$('.hSpot').mouseout(function(){
+			// remove the color class
+			$(bodyBackG).removeClass(myId);
+		});
+	});
+	// ACR this really helped http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseover_mouseout
+	</script>
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

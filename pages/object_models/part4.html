@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 4</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<link rel="stylesheet" href="../../js/jquery-ui-1.10.4/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="../../js/jquery-ui-1.10.4/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../../js/jquery-ui-1.10.4/ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript7.js"></script>
+	
+		<!-- emmet script -->
+		<!-- (li>a[href='../part$.html']{part$})*4 -->
+	 <script>
+		// jQuery script for view/hide 		
+		// var displayMe = function(x, y){
+		// 	$(document).ready(function(){
+		// 		$(x).click(function(){
+		// 			$(y).slideToggle("slow");
+		// 		});
+		// 	});
+		// };
+
+		// displayMe('.flip1', '.parts1');
+		// displayMe('.flip2', '.parts2');
+		// displayMe('.flip3', '.parts3');
+		// displayMe('.flip4', '.parts4');
+		// displayMe('.flip5', '.parts5');
+
+
+		// var mouseDisplay = function(x, y, z){
+		// 	$(document).ready(function(){
+		// 	  $(z).mouseover(function(){
+		// 			$(y).slideDown(500);
+		// 	  });
+		// 	  $(x).mouseout(function(){
+		// 	    $(y).fadeOut(3000);
+		// 	  });
+		// 	});
+		// };
+
+		var mouseDisplay = function(x, y){
+			$(document).ready(function(){
+			  $(x).mouseover(function(){
+					$(y).slideDown(500);
+			  });
+			  $(x).mouseout(function(){
+			    $(y).fadeOut(3500);
+			  });
+			});
+		};
+
+		// mouseDisplay('#flip1', '.parts1', '#flip1'); 
+		mouseDisplay('#flip1', '.parts1');
+		mouseDisplay('#flip2', '.parts2');
+		mouseDisplay('#flip3', '.parts3');
+		mouseDisplay('#flip4', '.parts4');
+		mouseDisplay('#flip5', '.parts5');
+
+		// var mouseDisplay = function(x, y){
+		// 	$(document).ready(function(){
+		// 	  $(x).mouseover(function(){
+		// 			$(y).slideDown(500);
+
+		// 	  });
+		// 	});
+		// };
+
+		// var mouseHide = function(x, y){
+		// 	$(document).ready(function(){
+		// 	  $(x).mouseout(function(){
+		// 			setTimeout(($(y).fadeOut(3000)),5000);
+		// 	  });
+		// 	});
+		// };
+
+		// mouseDisplay('#flip1', '.parts1');
+		// mouseDisplay('.parts1', '.parts1');
+		// mouseHide('.flip1', '.parts1');
+
+	</script>
+	<style>
+		ul > li > a { color: black;}
+		.content
+		{
+			height: 300px;
+		}
+
+		/* new nav bar */
+		.flip1, .flip2, .flip3, .flip4, .flip5, .flip
+		{
+			background: #CCCCCC;
+			border:1px solid gray;
+			border-radius: 5px;
+			padding-left: 10px;
+			width: 60px;
+			margin: 0px;
+			display: inline-block;
+			position: absolute;
+			top: 170px;
+		}
+		.parts1, .parts2, .parts3, .parts4, .parts5
+		{
+			display: none;
+			margin: 0px auto;
+		}
+		.flip { left: 140px; }
+		.flip1 { left: 212px; }
+		.flip2 { left: 283px; }
+		.flip3 { left: 354px; }
+		.flip4 { left: 425px; }
+		.flip5 { left: 496px; }
+		ul,li { margin-left: 0px;}
+		ul { padding-left: 0px;}
+		li>a { margin-left: 0px;}
+		
+	</style>
+</head>
+<body>
+<h1>Links To Homework 1 - 6</h1>
+<div class="content">
+
+<div class="flip">
+<a href="../../HW1.html">HW1</a>
+
+</div>
+<div class="flip1">
+	<!-- <p id="flip1">HW2</p> -->
+	<a id="flip1" href="../../HW2.html">HW2</a>
+
+	<div class="parts1">
+		<ul>
+		<li><a href="../part1.html">part1</a></li>
+		<li><a href="../part2.html">part2</a></li>
+		<li><a href="../part3.html">part3</a></li>
+		<li><a href="../part4.html">part4</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip2">
+<a id="flip2" href="../../HW3.html">HW3</a>
+
+	<div class="parts2">
+		<ul>
+		<li><a href="../functions/part1.html">part1</a></li>
+		<li><a href="../functions/part2.html">part2</a></li>
+		<li><a href="../functions/part3.html">part3</a></li>
+		<li><a href="../functions/part4.html">part4</a></li>
+		<li><a href="../functions/part5.html">part5</a></li>
+		<li><a href="../functions/part6.html">part6</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip3">
+<a id="flip3" href="../../HW4.html">HW4</a>
+
+	<div class="parts3">
+		<ul>
+		<li><a href="../loops/part1.html">part1</a></li>
+		<li><a href="../loops/part2.html">part2</a></li>
+		<li><a href="../loops/part3.html">part3</a></li>
+		<li><a href="../loops/part4.html">part4</a></li>
+		<li><a href="../loops/part5.html">part5</a></li>
+		<li><a href="../loops/part6.html">part6</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip4">
+<a id="flip4" href="../../HW5.html">HW5</a>
+
+	<div class="parts4">
+		<ul>
+		<li><a href="../arrays/part1a.html">part1a</a></li>
+		<li><a href="../arrays/part1b.html">part1b</a></li>
+		<li><a href="../arrays/part2.html">part2</a></li>
+		<li><a href="../arrays/part3.html">part3</a></li>
+		<li><a href="../arrays/part4.html">part4</a></li>
+		</ul>
+	</div>
+</div>
+<div class="flip5">
+<a id="flip5" href="../../HW6.html">HW6</a>
+	<div class="parts5">
+		<ul>
+			<li><a href="../objects/part1.html">part1</a></li>
+			<li><a href="../objects/part2.html">part2</a></li>
+			<li><a href="../objects/part3.html">part3</a></li>
+			<li><a href="../objects/part4.html">part4</a></li>
+		</ul>
+	</div>
+</div>
+	
+	<h5>Mouseout is buggy for me. </h5>
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>
