@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 2</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="../js/myjavascript.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/mindstyle2.css" />
+</head>
+<body>
+<div class="content">
+	<h5>Enter three numbers of your choice and hit submit. This will calculate the sum, average, and product of the three integers, as well as the smallest and largest of the three integers.</h5>
+<form id="math">
+	<table>
+		<tr>
+			<td>First Number:</td>
+			<td><input type="text" id="num1" size="10"></td>
+		</tr>
+		<tr>
+			<td>Second Number:</td>
+			<td><input type="text" id="num2" size="10"></td>
+		</tr>
+		<tr>
+			<td>Third Number:</td>
+			<td><input type="text" id="num3" size="10"></td>
+		</tr>
+	</table>
+	<br>
+	<input type="button" onclick="doMath()" value="SUBMIT">
+	<input type="reset" value="RESET">
+</form>
+
+</div>
+<footer>
+<form id="close">
+	<input type="button" value="Close Window" onclick="window.close()">
+</form>
+</footer>
+</body>
+</html>

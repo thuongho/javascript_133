@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 1</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript8.js"></script>
+	
+
+	<script>
+		function showHint(str){
+			var xmlhttp;
+			if (str.length==0){ 
+		  	document.getElementById("txtHint").innerHTML="";
+			  return;
+		  }
+			if (window.XMLHttpRequest){
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+			  xmlhttp=new XMLHttpRequest();
+		  } else {
+		  	// code for IE6, IE5
+		  	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+				xmlhttp.onreadystatechange=function(){
+			  if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			    // document.getElementById("n2").value=xmlhttp.responseText;
+			    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+		    }
+		  }
+			xmlhttp.open("GET", "../../../getHint.php?q="+str, true);
+			xmlhttp.send();
+		}
+	</script>
+	
+	<style>
+		#login 
+		{ 
+			background: #E1FFFE;
+			display: none;
+			border-radius: 5px;
+			box-shadow: 5px 5px 5px #888;
+			width: 350px;
+		}
+		.content { height: 300px; }
+		.expand
+		{
+			cursor: pointer;
+			background: url('../../images/add.jpg') no-repeat;
+			background-size: contain;
+		}
+		.close
+		{
+			background: url('../../images/minus.jpg') no-repeat;
+			background-size: contain;
+		}
+		.expand p
+		{
+			margin-left: 30px;
+			font-family: arial;
+			color: green;
+			text-shadow: 1px 1px 0px black;
+		}
+	</style>
+</head>
+<body>
+<h1>Let Me Guess Your First Name</h1>
+<div class="content">
+	
+	<form name="myForm">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="username" onkeyup="showHint(this.value)" id="n1" size="15"></td>
+			</tr>
+			<tr>
+				<td>Suggestion:</td>
+				<td><span id="txtHint"></span></td>
+			</tr>
+		</table>
+	</form>
+	
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>

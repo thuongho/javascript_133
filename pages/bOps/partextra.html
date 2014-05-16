@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Extra Credit</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/mindstyle2.css" />
+	<script type="text/javascript">
+
+	function theRest(){
+	var htmlOutput = "";
+
+	htmlOutput += "<table border = '1'>";
+	htmlOutput += "<tr>"
+	htmlOutput += "<th>Number</th>"
+	htmlOutput += "<th>Square</th>"
+	htmlOutput += "<th>Cube</th>"
+	htmlOutput += "</tr>"
+
+	for(var i=7; i<=10; i++){
+		var num, sqr, cub;
+		num = i;
+		sqr = num * num;
+		cub = sqr * num;
+		htmlOutput += "<tr>";
+		htmlOutput += "<td>" + num + "</td>";
+		htmlOutput += "<td>" + sqr + "</td>";
+		htmlOutput += "<td>" + cub + "</td>";
+		htmlOutput += "</tr>";
+	};
+
+	htmlOutput += "</table>";
+
+	//set the div block to the tblOutput
+	document.getElementById("theTable").innerHTML = htmlOutput;
+	};
+
+	</script>
+	<style type="text/css">
+	td{text-align: right;}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h5>This calculates the foreign exchange rates.</h5>
+	<form id="math">
+	<table>
+		<tr>
+			<th>Monetary Exchange Rates</th>
+		</tr>
+		<tr>
+			<th>Currency</th>
+			<th>Rate</th>
+			<th>Value</th>
+		</tr>
+	    <script type="text/javascript">
+		
+		for(var i=1; i<=6; i++){
+			var num, sqr, cub;
+			num = i;
+			sqr = num * num;
+			cub = sqr * num;
+			document.writeln("<tr>");
+			document.writeln("<td>" + num + "</td>");
+			document.writeln("<td>" + sqr + "</td>");
+			document.writeln("<td>" + cub + "</td>");
+			document.writeln("</tr>");
+		};
+		</script>
+	</table>
+	<br>
+	<input type="button" onclick="exchangeMe()" value="SUBMIT">
+	<input type="reset" value="RESET">
+	
+	</form>
+	<br>
+	<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+	</footer>
+</body>
+</html>

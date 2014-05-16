@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 2</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../css/mindstyle2.css" />
+	<script type="text/javascript" src="../../js/jquery.js"></script>
+	<script type="text/javascript" src="../../js/myjavascript8.js"></script>
+	
+
+	<script>
+
+		var inputTime = "1",
+			inputDate = "2",
+			inputDateII = "3";
+
+		var responseArray = [];
+
+		// browser support code
+		function ajaxFunction(url){
+			var ajaxRequest;
+
+			try {
+			  // Opera 8.0+, Safari, Firefox 
+				ajaxRequest = new XMLHttpRequest();
+			} catch(e){
+				// IE
+				try {
+					ajaxRequest = new ActiveXObject("Xsml2.XMLHTTP");
+				} catch(e){
+					try {
+						ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+					} catch(e){
+						// Something went wrong
+						alert("Your browser is broken.");
+						return false;
+					}
+				}
+			}
+			// function to receive data sent from server
+			ajaxRequest.onreadystatechange = function(){
+				// response from server is complete when readyState is 4
+				if (ajaxRequest.readyState == 4){
+					if (url == "../../../serverTime.php"){
+					  inputTime = ajaxRequest.responseText;
+					} else if (url == "../../../serverDate.php"){
+						inputDate = ajaxRequest.responseText;
+					} else {
+						inputDateII = ajaxRequest.responseText;
+					}
+				}
+			}
+			ajaxRequest.open("GET", url, true);
+			ajaxRequest.send(null);
+		}
+		ajaxFunction("../../../serverTime.php");
+			ajaxFunction("../../../serverDate.php");
+			ajaxFunction("../../../serverDateII.php");
+
+		var ajaxDoMe = function(){
+			ajaxFunction("../../../serverTime.php");
+			ajaxFunction("../../../serverDate.php");
+			ajaxFunction("../../../serverDateII.php");
+			document.myForm.timeT.value = inputTime;
+			document.myForm.dateDay.value = inputDate;
+			document.myForm.dateTime.value = inputDateII;
+
+		};
+
+	</script>
+	
+	<style>
+		#login 
+		{ 
+			background: #E1FFFE;
+			display: none;
+			border-radius: 5px;
+			box-shadow: 5px 5px 5px #888;
+			width: 350px;
+		}
+		.content { height: 300px; }
+		.expand
+		{
+			cursor: pointer;
+			background: url('../../images/add.jpg') no-repeat;
+			background-size: contain;
+		}
+		.close
+		{
+			background: url('../../images/minus.jpg') no-repeat;
+			background-size: contain;
+		}
+		.expand p
+		{
+			margin-left: 30px;
+			font-family: arial;
+			color: green;
+			text-shadow: 1px 1px 0px black;
+		}
+	</style>
+</head>
+<body>
+<h1>Time Format</h1>
+<div class="content">
+	
+	<form name="myForm">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="username" onChange="ajaxDoMe();" id="n1" size="15"></td>
+			</tr>
+			<tr>
+				<td>Time:</td>
+				<td><input type="text" name="timeT" id="n2" size="15"></td>
+			</tr>
+			<tr>
+				<td>Date (day, date format):</td>
+				<td><input type="text" name="dateDay" id="n3" size="15"></td>
+			</tr>
+			<tr>
+				<td>Date (mm/dd/yy format):</td>
+				<td><input type="text" name="dateTime" id="n4" size="15"></td>
+			</tr>
+		</table>
+	</form>
+	
+	<br>
+	
+</div>
+
+<footer>
+	<form id="close">
+		<input type="button" value="Close Window" onclick="window.close()">
+	</form>
+</footer>
+</body>
+</html>
