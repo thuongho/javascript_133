@@ -20,6 +20,7 @@ $State = array("AL" => "Alabama, Montgomery, 4369862",
 header("Content-Type: text/plain");
 
 $stcode = $_GET["stcode"];
+$stcode = strtoupper($stcode);
 if (array_key_exists($stcode, $State))
    print $State[$stcode];
 else  
